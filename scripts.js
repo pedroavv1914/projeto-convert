@@ -8,7 +8,7 @@ const form = document.querySelector("form")
 const amount = document.getElementById("amount")
 const currency = document.getElementById("currency")
 const footer = document.querySelector("main footer")
-
+const decription = document.getElementById("description")
 
 // MANIPULANDO O INPUT AMOUNT PARA RECEBER SOMENTE NÚMEROS
 amount.addEventListener("input", () => {
@@ -38,6 +38,8 @@ form.onsubmit = (event) => {
 // FUNÇÃO PARA CONVERTER A MOEDA
 function convertCurrency(amount, price, symbol) {
     try {
+        description.textContent = `${symbol} 1 = ${price}`
+
         footer.classList.add("show-result")
 
     }catch (error){
